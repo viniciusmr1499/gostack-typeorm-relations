@@ -4,7 +4,7 @@ export default class AddProductIdToOrderProducts1606263303791 implements Migrati
 
     public async up(queryRunner: QueryRunner): Promise<void> {
       await queryRunner.addColumn(
-        'ordersProducts',
+        'orders_products',
         new TableColumn({
           name: 'product_id',
           type: 'uuid',
@@ -13,7 +13,7 @@ export default class AddProductIdToOrderProducts1606263303791 implements Migrati
       );
 
       await queryRunner.createForeignKey(
-        'ordersProducts',
+        'orders_products',
         new TableForeignKey({
           name: 'OrdersProductsProduct',
           columnNames: ['product_id'],
